@@ -53,22 +53,28 @@
 );
     z-index: -1; 
     }
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
 
 .page-grid-container {
     display: grid;
+    position: relative;
     width: 100vw;
     margin: 0 auto;
-    border: 1px solid red;
-    grid-template-rows: 1fr 1fr 1fr;
+    padding: 0;
+    grid-template-rows: 3fr 4fr 3fr;
     row-gap: 100px;
 }
 
 section {
-    border: 1px solid green;
+
 }
 
 .image-container {
-    max-height: 80vh;
+    max-height: 70vh;
     grid-area: aimg;
     display: flex;
     justify-content: center; /* Centers the text horizontally */
@@ -89,7 +95,7 @@ section {
 
 .about {
     width: 90%;
-    height: 80vh;
+    height: 70vh;
     margin: auto;
     margin-top: 80px;
     display: grid;
@@ -110,14 +116,26 @@ section {
     box-shadow: 5px 5px 10px gray;
 }
 
+.about-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.abouttitle {
+    font-size: 2rem;
+}
+
 .about-text{
     grid-area: abouttext;
     align-self: center;
     height: 100%;
     background-color: #ffffff;
     box-shadow: 5px 5px 10px gray;
+    padding: 20px;
     opacity: 0;
-    animation: appear 1s ease-in-out forwards;}
+    animation: appear 1s ease-in-out forwards;
+}
 
 
 .portfolio {
@@ -191,12 +209,10 @@ section {
     width: 350px;
     grid-template-columns: 1fr;
     grid-template-rows: 60% 40%;
-    border: 1px solid red;
+ 
     box-shadow: 5px 5px 10px gray;
     transition: transform 1s ease-in-out;
-    /* grid-template-areas:
-    "Top"
-    "bottom" */
+
 }
 
 .projectCard:hover {
@@ -214,13 +230,13 @@ section {
     font-size: 3rem;
     color: white;
     text-align: center;
-    /* grid-area: Top; */
+
     
 }
 
 .projectBottom {
     display: grid;
-    /* grid-area: bottom; */
+
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 9fr;
 }
@@ -231,7 +247,7 @@ section {
 
 .projectCardTitle {
     flex-basis: 95%;
-    border: 1px solid red;
+   
     justify-content: flex-start;
     padding-left: 10px;
 }
@@ -239,6 +255,8 @@ section {
 .projectCardIcon {
     flex-basis: 5%;
     justify-content: flex-end;
+    margin-right: 5px;
+    align-self: center;
 }
 
 .projectCardDescription {
@@ -246,8 +264,54 @@ section {
     font-size: x-small
 }
 
+.contact {
+    width: 90%;
+    height: 70vh;
+    margin: auto;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    grid-template-rows: 1fr;
+    padding: 30px;
+    grid-template-areas:
+    "left right"
 
+}
 
+.contactLeft {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    min-height: 0;
+
+}
+
+.contactRight {
+  
+    max-height: 70vh;
+    
+}
+
+.contactRight img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+      box-shadow: 5px 5px 10px gray;
+}
+
+.bottom-div {
+    width: 100vw;
+    background-color: lightsteelblue;
+    height: 700px;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+}
+
+.contactTitle {
+    font-size: 3rem;
+}
 
     // New Ideas:
 
