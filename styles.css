@@ -302,7 +302,7 @@ section {
 .bottom-div {
     width: 100vw;
     background-color: lightsteelblue;
-    height: 700px;
+    height: 800px;
     position: absolute;
     z-index: -1;
     left: 0;
