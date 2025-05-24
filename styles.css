@@ -326,7 +326,7 @@ body {
     margin: auto;
     position: relative;
     width: 90%;
-    height: 70vh;
+    height: 100%;
     margin-top: 80px;
  
 }
@@ -360,7 +360,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    column-gap: 50px;
+    column-gap: 10px;
     row-gap: 30px;}
 
 .portfolio {
@@ -368,6 +368,7 @@ body {
     display: grid;
     height: 100%;
     margin: auto;
+    margin-left: 10px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 9fr;
     justify-items: center;
@@ -398,6 +399,97 @@ body {
 
 }
 
+}
+
+@media (max-width: 700px){
+
+    .portfolio {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+    margin-left: 10px;
+    gap: 30px;
+
+}
+
+    .projectHolder {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    column-gap: 10px;
+    row-gap: 30px;}
+
+ .contact {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "contactLeft"
+        "contactRight";
+    width: 100vw;
+}
+
+.contactLeft{
+    width: 100vw;
+    height: 500px;
+    background-color: lightsteelblue;
+    padding: 10px;
+    box-sizing: border-box;
+    grid-area: contactLeft;
+}
+
+.contactRight{
+ 
+    max-height: 500px;
+    height: auto;
+    grid-area: contactRight;
+}
+
+
+.bottom-div {
+   display: none;
+}
+
+/*  */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    width: 100vw;
+}
+
+.image-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    all: unset; /* Resets all styles */
+    display: block !important;
+    color: black !important;
+    font-size: 40px !important;
+    position: absolute;
+    top: 300px;
+}
+
+.about-text {
+    width: calc(100vw - 20px);
+    background-color: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
+    scroll-padding-right: 10px;
+}
 }
 
 

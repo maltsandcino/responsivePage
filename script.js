@@ -3,22 +3,26 @@
 // })
 
 let portfolio = document.querySelector(".portfolio")
-
 function handleScroll() {
     const rect = portfolio.getBoundingClientRect();
-    const scrollProgress = window.innerHeight - rect.top;
-    const height = rect.height
-   
+    const height = rect.height;
+    const viewportWidth = window.innerWidth;
+
+    // Adjust scroll threshold for narrower screens
+    let modifier = viewportWidth < 700 ? 3 : 1; // Reduces scroll requirement for small screens
+
+    const scrollProgress = (window.innerHeight - rect.top) * modifier;
     let opacity = scrollProgress / height;
 
     opacity = Math.min(1, Math.max(0, opacity));
 
     portfolio.style.opacity = opacity;
 
-      if (opacity === 1) {
+    if (opacity === 1) {
         window.removeEventListener("scroll", handleScroll);
     }
 }
+
 
 window.addEventListener("scroll", handleScroll)
 
