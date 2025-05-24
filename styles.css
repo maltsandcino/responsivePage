@@ -1,0 +1,260 @@
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 100%;
+        transform: translateX(0);
+    }
+  }
+
+  @keyframes appear {
+    from {
+        opacity: 0;
+
+    }
+    to {
+        opacity: 100%;
+     
+    }
+  }
+  
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+* {
+    font-family: Playfair;
+}
+
+.background-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: lightsteelblue;
+  clip-path: polygon(
+    0% 0vh,     /* Start at the top-left */
+    0% 100vh,   /* Extend all the way down */
+    100% 10vh,  /* Right side, 10vh below top */
+    100% 0vh    /* Top-right corner */
+);
+    z-index: -1; 
+    }
+
+.page-grid-container {
+    display: grid;
+    width: 100vw;
+    margin: 0 auto;
+    border: 1px solid red;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 100px;
+}
+
+section {
+    border: 1px solid green;
+}
+
+.image-container {
+    max-height: 80vh;
+    grid-area: aimg;
+    display: flex;
+    justify-content: center; /* Centers the text horizontally */
+    align-items: center; /* Centers text vertically */
+    position: relative; /* Allows stacking */
+   
+}
+
+.name {
+    position: absolute;
+    align-self: flex-end;
+    font-size: 60px;
+    padding: 10px;
+    opacity: 0;
+    animation: appear 1s ease-in-out forwards;
+    animation-delay: 1.5s
+}
+
+.about {
+    width: 90%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas:
+    "aimg ."
+    "aimg abouttext"
+    "aimg ."
+}
+
+.about-image {
+    max-height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: slide-in 1.5s ease-in-out forwards;
+  
+    box-shadow: 5px 5px 10px gray;
+}
+
+.about-text{
+    grid-area: abouttext;
+    align-self: center;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 10px gray;
+    opacity: 0;
+    animation: appear 1s ease-in-out forwards;}
+
+
+.portfolio {
+    width: 90%;
+    height: 70vh;
+    margin: auto;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas:
+    "aimg ."
+    "aimg abouttext"
+    "aimg ."
+}
+
+.dot1 {
+    position: relative;
+    animation: bounce 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+.dot2 {
+    position: relative;
+    animation: bounce 1.4s ease-in-out infinite;
+    display: inline-block;
+    animation-delay: .1s
+}
+
+.dot3 {
+    position: relative;
+    animation: bounce 1.3s ease-in-out infinite;
+    display: inline-block;
+    animation-delay: .2s
+}
+
+.dot:hover{
+    animation-play-state: paused;
+}
+
+.portfolio {
+    opacity: 0;
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas:
+    "title"
+    "stuff"
+}
+
+.projectTitle {
+    padding-left: 20px;
+    width: 100%;
+}
+
+.projectHolder {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 50px;
+    row-gap: 30px;
+   
+}
+
+.projectCard {
+    margin: auto;
+    display: grid;
+    height: 370px;
+    width: 350px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 40%;
+    border: 1px solid red;
+    box-shadow: 5px 5px 10px gray;
+    transition: transform 1s ease-in-out;
+    /* grid-template-areas:
+    "Top"
+    "bottom" */
+}
+
+.projectCard:hover {
+    transform: scale(1.05)
+}
+
+.projectTop {
+    display: flex;
+    background-color: lightpink;
+    filter: saturate(.5);
+    height: 100%;
+    transition: background-color 2s ease-in-out, color 2s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    /* grid-area: Top; */
+    
+}
+
+.projectBottom {
+    display: grid;
+    /* grid-area: bottom; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 9fr;
+}
+
+.projectCardHero{
+    display: flex;
+}
+
+.projectCardTitle {
+    flex-basis: 95%;
+    border: 1px solid red;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.projectCardIcon {
+    flex-basis: 5%;
+    justify-content: flex-end;
+}
+
+.projectCardDescription {
+    padding: 10px;
+    font-size: x-small
+}
+
+
+
+
+    // New Ideas:
+
+    Originally: Flexbox or Grid, doesn't matter.
+
+
+
+    Mediuum size:
+
+    Block container, image floats left, margin whatever.
