@@ -38,6 +38,8 @@
     font-family: Playfair;
 }
 
+
+
 .background-div {
     position: absolute;
     top: 0;
@@ -132,6 +134,8 @@ body {
     padding: 20px;
     opacity: 0;
     animation: appear 1s ease-in-out forwards;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 
@@ -200,6 +204,7 @@ body {
 }
 
 .projectCard {
+    border-radius: 5px;
     margin: auto;
     display: grid;
     height: 370px;
@@ -217,6 +222,8 @@ body {
 }
 
 .projectTop {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     display: flex;
     background-color: lightpink;
     filter: saturate(.5);
@@ -284,12 +291,14 @@ body {
 }
 
 .contactRight {
+    
   
     max-height: 70vh;
     
 }
 
 .contactRight img {
+    border-radius: 5px;
     max-height: 100%;
     width: 100%;
     object-fit: cover;
@@ -343,6 +352,7 @@ body {
     width: 500px;
     max-height: 500px;
     margin: auto;
+    border-bottom-left-radius: 5px;
 }
 
 .name{
@@ -414,6 +424,9 @@ body {
     margin-left: 10px;
     gap: 30px;
 
+    }
+.image-container img {
+        border-radius: 5px;
 }
 
     .projectHolder {
@@ -489,6 +502,10 @@ body {
     box-shadow: none;
     box-sizing: border-box;
     scroll-padding-right: 10px;
+}
+
+.contactRight img{
+ border-radius: 0px;
 }
 }
 
